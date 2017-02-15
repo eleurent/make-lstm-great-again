@@ -3,11 +3,12 @@ import sys, getopt
 import json
 import time
 from twython import Twython
+from __future__ import print_function
 
 class TwitterCorpus(object):
     MAX_TWEETS_COUNT = 3200
     MAX_BATCH_SIZE = 200 # per API request
-    API_REST_TIME = 300 # 5mn
+    API_REST_TIME = 5
     END_OF_TWEET_TOKEN = "\EOT"
 
     def __init__(self):
@@ -24,7 +25,7 @@ class TwitterCorpus(object):
     """ Perform one API call to fetch tweets, with a limit count of 200."""
     def fetch_batch(self, handle, count, max_id):
         count = min(count, self.MAX_BATCH_SIZE)
-        print "Fetching", count, "tweets."
+        print("Fetching", count, "tweets.")
         return self.twitter.get_user_timeline(screen_name=handle,
             count=count, include_retweets=False, max_id=max_id)
 
@@ -32,8 +33,8 @@ class TwitterCorpus(object):
     def fetch(self, handle, count):
         count = min(count, self.MAX_TWEETS_COUNT)
         tweets = self.fetch_batch(handle, count % self.MAX_BATCH_SIZE, None)
-        for i in range(0, count/self.MAX_BATCH_SIZE):
-            print "Waiting a while between API calls..."
+        for i in range(count/self.MAX_BATCH_SIZE):
+            print("Waiting a while between API calls...", i, "/", (count/self.MAX_BATCH_SIZE))
             time.sleep(self.API_REST_TIME)
             tweets.extend(self.fetch_batch(handle, self.MAX_BATCH_SIZE, tweets[-1]['id']))
         return tweets
@@ -66,7 +67,7 @@ def main(argv):
         elif opt in ("-u", "--username"):
             username = arg
         elif opt in ("-n", "--count"):
-            count = arg
+            count = int(arg)
         elif opt in ("-o", "--outfile"):
             outfile = arg
         elif opt in ("-t", "--token"):
