@@ -1,14 +1,14 @@
 #!/usr/bin/python
+from __future__ import print_function
 import sys, getopt
 import json
 import time
 from twython import Twython
-from __future__ import print_function
 
 class TwitterCorpus(object):
-    MAX_TWEETS_COUNT = 3200
+    MAX_TWEETS_COUNT = 3200*100
     MAX_BATCH_SIZE = 200 # per API request
-    API_REST_TIME = 5
+    API_REST_TIME = 2
     END_OF_TWEET_TOKEN = "\EOT"
 
     def __init__(self):
@@ -58,11 +58,11 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hu:n:o:t:",["username=","count=","outfile=","token="])
     except getopt.GetoptError:
-        print man
+        print(man)
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print man
+            print(man)
             sys.exit()
         elif opt in ("-u", "--username"):
             username = arg
