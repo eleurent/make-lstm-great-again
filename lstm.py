@@ -5,18 +5,18 @@ Usage:
                 [--checkpoint_path <p>] [--no_autoload]
   lstm.py generate [-o <file>]
                    [-c <n>] [--maxlen <l>] [--temperature <T>]
-  lstm.py -h --help
+  lstm.py -h | --help
 
 Options:
   -h --help
   -i <file> --input <file>   Input text file [default: input.txt]
   -o <file> --output <file>  Output generated file [default: output.txt]
-  -c <n> --count=<n>         Number of characters generated [default: 1000]
-  --maxlen=<l>               Maximum length of sequences [default: 20]
-  --temperature=<T>          Novelty in the generation, usually between 0. and 2.
+  -c <n> --count <n>         Number of characters generated [default: 1000]
+  --maxlen <l>               Maximum length of sequences [default: 20]
+  --temperature <T>          Novelty in the generation, usually between 0. and 2.
                              If not provided, output will be generated with
                              several temperatures [default: 1.0]
-  --checkpoint_path=<p>      Name of the model snapshots that will be saved at
+  --checkpoint_path <p>      Name of the model snapshots that will be saved at
                              each checkpoint. [default: model-save]
   --no_autoload              Do not load the last saved checkpoint model even
                              if it exists
@@ -110,14 +110,14 @@ def generate(parameters):
                        seq_seed=seed)
     print(s)
 
-def parse_parameters(parameters):
+def cast_parameters(parameters):
     parameters['--count'] = int(parameters['--count'])
     parameters['--maxlen'] = int(parameters['--maxlen'])
     parameters['--temperature'] = float(parameters['--temperature'])
     return parameters
 
 if __name__ == '__main__':
-    parameters = parse_parameters(docopt(__doc__))
+    parameters = cast_parameters(docopt(__doc__))
     if parameters['train']:
         train(parameters)
     elif parameters['generate']:
