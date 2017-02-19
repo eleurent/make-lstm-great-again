@@ -86,6 +86,7 @@ def prepare(parameters, dataset_needed=False):
         load_model(model)
     return model, X, Y
 
+""" Train a model on the input dataset"""
 def train(parameters):
     model, X, Y = prepare(parameters, dataset_needed=True)
     for i in range(50):
@@ -102,14 +103,19 @@ def train(parameters):
         print(model.generate(600, temperature=0.25, seq_seed=seed))
     f.close()
 
+""" Generate new content from the trained model"""
 def generate(parameters):
     model, _, _ = prepare(parameters)
     seed = random_sequence_from_textfile(parameters['--input'], parameters['--maxlen'])
+    print("Generating", parameters['--count'],
+        "characters with a temperature of", parameters['--temperature'],'...')
     s = model.generate(parameters['--count'],
                        temperature=parameters['--temperature'],
                        seq_seed=seed)
-    print(s)
+    with open(parameters['--output'], 'w') as f:
+      f.write(s)
 
+""" Cast numeric parameters"""
 def cast_parameters(parameters):
     parameters['--count'] = int(parameters['--count'])
     parameters['--maxlen'] = int(parameters['--maxlen'])
