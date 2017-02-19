@@ -89,3 +89,29 @@ $ python lstm.py train -i tweets.txt
 # Generate about 100 brand new Donald Trump's tweets from trained model
 $ python lstm.py generate -i tweets.txt -c 14000
 ```
+
+## Results
+
+28000 characters have been generated in `output.txt` (about 200 tweets) after a few hours of learning.
+
+Here are some observation on the produced data.
+
+### Length
+
+A tweet should never be more than 140 characters. On the generated dataset, we can see that this constraint is often violated, with about half of the tweets between 140 and 300 characters.
+
+<img src='length.png' width='400' />
+
+### Exclamation points
+
+I noticed that a lot of @realDonaldTrump's tweets contain or even end with an exclamation point.
+Let's take a look at the generated data.
+
+```
+1947 exclamation points out of 3230 tweets (0.6%) in input data
+111 exclamation points out of 194 tweets (0.57%)  in generated data
+976 exclamation points ending the tweet out of 3230 tweets (0.3%) in input data
+52 exclamation points ending the tweet out of 194 tweets (0.27%)  in generated data
+```
+
+The overall proportions seem to be respected.
