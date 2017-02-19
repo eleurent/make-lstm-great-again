@@ -1,9 +1,15 @@
 # make-lstm-great-again
 This project aims to artificially recreate Donald Trump's very unique and peculiar tweeting style.
-It uses the Twitter API to fetch the aforementioned tweets, and a LSTM recurrent neural network to generate new content matching the style of this dataset. 
+It uses the Twitter API to fetch the aforementioned tweets, and a LSTM recurrent neural network to generate new content matching the style of this dataset.
 
 ## Twitter Scraper
 Fetch the tweets from a given twitter handle.
+
+## Installation
+
+```
+pip install -r requirements.txt
+```
 
 ### Usage
 
@@ -76,7 +82,7 @@ Options:
 
 ```bash
 # Train a LSTM on previously fetched tweets
-$ python lstm.py train -i tweets.txt 
+$ python lstm.py train -i tweets.txt
 ```
 
 ```bash
