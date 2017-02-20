@@ -108,10 +108,71 @@ I noticed that a lot of @realDonaldTrump's tweets contain or even end with an ex
 Let's take a look at the generated data.
 
 ```
-1947 exclamation points out of 3230 tweets (0.6%) in input data
-542 exclamation points out of 834 tweets (0.65%)  in generated data
-976 exclamation points ending the tweet out of 3230 tweets (0.3%) in input data
-263 exclamation points ending the tweet out of 834 tweets (0.32%)  in generated data
-```
+1947 exclamation points out of 3230 tweets (60%) in input data
+542 exclamation points out of 834 tweets (65%) in generated data
 
+976 exclamation points ending the tweet out of 3230 tweets (30%) in input data
+263 exclamation points ending the tweet out of 834 tweets (32%) in generated data
+```
 The overall proportions seem to be respected.
+Likewise, a lot of tweets contain at least one capitalized word
+
+```
+1123 tweets containing an uppercase word out of 3230 tweets (35%) in input data
+278 tweets containing an uppercase word out of 834 tweets (33%) in generated data
+
+25 most common capitalized words in input dataset:
+AMERICA: 117
+GREAT: 107
+MAKE: 104
+CNN: 101
+MAGA: 97
+AGAIN: 95
+ISIS: 44
+VOTE: 38
+MOVEMENT: 37
+THE: 32
+YOU: 31
+GOP: 28
+TRUMP: 27
+AND: 27
+SAFE: 27
+THANK: 26
+ICYMI: 25
+FBI: 25
+POTUS: 20
+FAKE: 17
+NEWS: 17
+CLINTON: 14
+WIN: 14
+JOBS: 13
+DNC: 13
+
+
+25 most common capitalized words in generated dataset:
+GREAT: 47
+AGAIN: 47
+AMERICA: 46
+MAGA: 45
+MAKE: 45
+CNN: 29
+VOTE: 18
+THE: 8
+DNC: 7
+MOVEMENT: 7
+GOP: 7
+AND: 6
+ISIS: 6
+FBI: 5
+PAD: 3
+SAD: 3
+REAT: 3
+AMERICANS: 3
+PEOPLE: 2
+VETE: 2
+SAFE: 2
+PATHE: 2
+WILL: 2
+THANK: 2
+THANG: 2
+```
