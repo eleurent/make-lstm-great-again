@@ -102,7 +102,7 @@ A tweet should never be more than 140 characters. On the generated dataset, we c
 
 <img src='length.png'/>
 
-### Exclamation points
+### Exclamation points!
 
 I noticed that a lot of @realDonaldTrump's tweets contain or even end with an exclamation point.
 Let's take a look at the generated data.
@@ -115,13 +115,16 @@ Let's take a look at the generated data.
 263 exclamation points ending the tweet out of 834 tweets (32%) in generated data
 ```
 The overall proportions seem to be respected.
-Likewise, a lot of tweets contain at least one capitalized word
+
+### MY COMPUTER IS STUCK ON CAPS LOCK, WHAT DO I DO?
+
+Likewise, a lot of tweets contain at least one uppercase word. The frequency is again respected in the generated dataset. Most common uppercase words also match.
 
 ```
 1123 tweets containing an uppercase word out of 3230 tweets (35%) in input data
 278 tweets containing an uppercase word out of 834 tweets (33%) in generated data
 
-25 most common capitalized words in input dataset:
+25 most common uppercase words in input dataset:
 AMERICA: 117
 GREAT: 107
 MAKE: 104
@@ -149,7 +152,7 @@ JOBS: 13
 DNC: 13
 
 
-25 most common capitalized words in generated dataset:
+25 most common uppercase words in generated dataset:
 GREAT: 47
 AGAIN: 47
 AMERICA: 46

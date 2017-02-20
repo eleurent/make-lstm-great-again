@@ -32,7 +32,7 @@ def print_analysis(analysis, name):
         len(analysis['tweets']),
         float(100*len(analysis['tweet_upper']))/len(analysis['tweets']),
         name)
-    print '25 most common capitalized words in {} dataset:'.format(name)
+    print '25 most common uppercase words in {} dataset:'.format(name)
     for (w, count) in analysis['upper_words'].most_common(25):
         print '{}: {}'.format(w, count)
 
