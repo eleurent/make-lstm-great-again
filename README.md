@@ -100,7 +100,7 @@ Here are some observation on the produced data.
 
 A tweet should never be more than 140 characters. On the generated dataset, we can see that this constraint is often violated, with about half of the tweets between 140 and 300 characters.
 
-<img src='length.png' width='400' />
+<img src='length.png'/>
 
 ### Exclamation points
 
@@ -109,9 +109,9 @@ Let's take a look at the generated data.
 
 ```
 1947 exclamation points out of 3230 tweets (0.6%) in input data
-111 exclamation points out of 194 tweets (0.57%)  in generated data
+542 exclamation points out of 834 tweets (0.65%)  in generated data
 976 exclamation points ending the tweet out of 3230 tweets (0.3%) in input data
-52 exclamation points ending the tweet out of 194 tweets (0.27%)  in generated data
+263 exclamation points ending the tweet out of 834 tweets (0.32%)  in generated data
 ```
 
 The overall proportions seem to be respected.

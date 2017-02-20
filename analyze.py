@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def analyse(filename):
+def analyze(filename):
     with open(filename) as f:
         data = f.read()
     analysis = {}
@@ -10,8 +10,8 @@ def analyse(filename):
     analysis['exclamation_end_tweets'] = [t for t in analysis['tweets'] if t.endswith('!')]
     return analysis
 
-in_analysis = analyse('input.txt')
-out_analysis = analyse('output.txt')
+in_analysis = analyze('input.txt')
+out_analysis = analyze('output.txt')
 
 print '{0} exclamation points out of {1} tweets ({2:.2}%) in input data'.format(
     len(in_analysis['exclamation_tweets']), len(in_analysis['tweets']), float(len(in_analysis['exclamation_tweets']))/len(in_analysis['tweets']))
